@@ -10,4 +10,6 @@ public interface EmployeeService {
 
     // interface to get the employee by its id
     Employee getEmployeeById( int empId);
+
+    void addEmployee(Employee employee);
 }
