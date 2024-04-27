@@ -30,4 +30,22 @@ public class EmployeeServiceImpl implements EmployeeService {
         empList.add(employee);
     }
 
+    // method to update the employee
+    @Override
+    public void updateEmployee(Employee employee, int empId) {
+        for(int i = 0; i<empList.size(); i++){
+            Employee e = empList.get(i);
+            if(e.getEmpId() == empId){
+                empList.set(i, employee);
+                return;
+            }
+        }
+    }
+
+    // method to delete the employee
+    @Override
+    public void deleteEmployee(int empId) {
+        empList.removeIf(e -> e.getEmpId() == empId);
+    }
+
 }
